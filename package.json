@@ -1,0 +1,23 @@
+{
+  "name": "happyprofileapp",
+  "version": "1.0.0",
+  "description": "**HappyProfileApp** is a single-page web application built with Node.js, MongoDB, and Bootstrap, designed as a test project to demonstrate proficiency with Node.js, API integration, MongoDB data handling, and responsive UI using HTML, CSS, and Bootstrap.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jquery": "^3.7.1",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.0",
+    "nodemon": "^3.1.7",
+    "toastr": "^2.1.4"
+  }
+}
