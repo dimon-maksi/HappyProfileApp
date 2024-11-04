@@ -1,0 +1,54 @@
+body {
+    min-height: 100vh;
+}
+
+.frame > * {
+    width: 80%;
+}
+
+.frame {
+    padding: 3px;
+    height: 85vh;
+    background-color: lightgray;
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.img-container > img {
+    width: 50%;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:valid {
+    border: 1px solid #28a745;
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+
+.form-control {
+    height: 35px;
+}
+
+#jokeContainer {
+    max-height: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
