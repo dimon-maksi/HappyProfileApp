@@ -110,6 +110,13 @@ $(document).ready(function () {
         }
     }
 
+    function clearInputFields() {
+        $('#firstName').val('');
+        $('#lastName').val('');
+        $('#age').val('');
+        $('#email').val('');
+    }
+
     $('#firstName').on('blur', saveFirstName);
     $('#lastName').on('blur', saveLastName);
     $('#age').on('blur', saveAge);
@@ -135,6 +142,15 @@ $(document).ready(function () {
         }
 
         fetchJoke();
+
+        const clearCache = () => {
+            localStorage.clear();
+            clearInputFields();
+            location.reload();
+            toastr.success('Cache cleared successfully!');
+        };
+    
+        $('#clearCache').on('click', clearCache);
 
         $('#fetchJoke').on('click', fetchJoke);
     });

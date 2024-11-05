@@ -54,7 +54,14 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
     background-color: coral;
+}
+
+header h1 {
+    margin: 0;
 }
 
 .publication {
