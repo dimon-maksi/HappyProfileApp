@@ -1,3 +1,36 @@
+//User photo fetch
+$(document).ready(function () {
+    const savedPhoto = localStorage.getItem('profilePhoto');
+    if (savedPhoto) {
+        $('#profilePhoto').attr('src', savedPhoto);
+    }
+
+    $('#fileInput').on('change', function (e) {
+        const file = e.target.files[0];
+        if (file && file.type === 'image/webp') {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                localStorage.setItem(
+                    'profilePhoto',
+                    event.target.result
+                );
+                $('#profilePhoto').attr('src', event.target.result);
+                toastr.success(
+                    'Profile photo uploaded successfully!',
+                    'Success'
+                );
+            };
+            reader.readAsDataURL(file);
+        } else {
+            toastr.error(
+                'Please upload a valid .webp image file.',
+                'Error'
+            );
+        }
+    });
+});
+
+// User profile info section
 $(document).ready(function () {
     if (localStorage.getItem('userInfo')) {
         const userInfo = JSON.parse(
@@ -82,6 +115,8 @@ $(document).ready(function () {
     $('#age').on('blur', saveAge);
     $('#email').on('blur', saveEmail);
 
+
+    //Chuck joke section
     $.get('/api-url', function (data) {
         function fetchJoke() {
             $.ajax({
@@ -105,33 +140,3 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
-    const savedPhoto = localStorage.getItem('profilePhoto');
-    if (savedPhoto) {
-        $('#profilePhoto').attr('src', savedPhoto);
-    }
-
-    $('#fileInput').on('change', function (e) {
-        const file = e.target.files[0];
-        if (file && file.type === 'image/webp') {
-            const reader = new FileReader();
-            reader.onload = function (event) {
-                localStorage.setItem(
-                    'profilePhoto',
-                    event.target.result
-                );
-                $('#profilePhoto').attr('src', event.target.result);
-                toastr.success(
-                    'Profile photo uploaded successfully!',
-                    'Success'
-                );
-            };
-            reader.readAsDataURL(file);
-        } else {
-            toastr.error(
-                'Please upload a valid .webp image file.',
-                'Error'
-            );
-        }
-    });
-});

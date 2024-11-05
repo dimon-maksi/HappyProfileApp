@@ -7,16 +7,21 @@
         <link rel="stylesheet" href="/style.css" />
         <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/toastr/toastr.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
         <script src="/jquery/jquery.min.js"></script>
         <script src="/toastr/toastr.min.js"></script>
     </head>
     <body>
-        <header class="p-3 text-center" style="background-color: coral">
+        <header class="p-3 text-center">
             <h1>Your Happy profile</h1>
         </header>
 
         <main class="container">
             <div class="row">
+                <!-- User Profile container -->
                 <div class="frame m-3 col-3 rounded-5">
                     <div class="img-container" style="cursor: pointer">
                         <img
@@ -80,10 +85,59 @@
                         <div id="jokeContainer" class="alert alert-info"></div>
                     </div>
                 </div>
-                <div class="frame m-3 col-8 rounded-5"></div>
+                <!-- User Feed container -->
+                <div class="frame m-3 p-3 col-8 rounded-5">
+                    <form class="row my-6 w-100">
+                        <div class="col-9 w-75">
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="message"
+                                id="message"
+                                aria-describedby="helpId"
+                                placeholder="Write your message..."
+                            />
+                        </div>
+                        <div class="col-3 p-0 w-25">
+                            <button
+                                type="submit"
+                                id="createPublication"
+                                class="btn btn-primary w-100"
+                            >
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                    <div
+                        id="feedList"
+                        class="rounded-3 my-3 bg-white overflow-scroll"
+                        style="height: 90%; width: 100%"
+                    >
+                        <div class="publication-container">
+                            <div class="publication m-3 p-2 rounded-2 w-75">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Aperiam, vero sint! Culpa
+                                    fugiat iure ratione similique temporibus
+                                    illo iusto, vero odit quasi veniam quod
+                                    perspiciatis tempore libero fugit eius
+                                    debitis.
+                                </p>
+                                <button class="like-button">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="delete-button">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
-        <script src="/js/home.js"></script>
+
+        <script src="/js/user.section.js"></script>
+        <script src="/js/feed.section.js"></script>
         <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
